@@ -45,7 +45,7 @@ let Images = () => {
   return (
     
     <body style={{
-      backgroundColor: currentImage === 0 ? '#C1E8FC'
+      backgroundColor: currentImage === 0 ? '#294910'
         : currentImage === 1 ? '#A57051'
           : currentImage === 2 ? '#D7CEC1'
             : currentImage === 4 ? '#305B80'
@@ -54,7 +54,7 @@ let Images = () => {
                   : currentImage === 8 ? '#811111'
                   : currentImage === 9 ? '#395561'
         : "initial",
-      color: currentImage === 0 ? '#294910'
+      color: currentImage === 0 ? '#C1E8FC'
         : currentImage === 1 ? '#141718'
         : currentImage === 2 ? '#487A8A'
             : currentImage === 3 ? '#CF9868'
