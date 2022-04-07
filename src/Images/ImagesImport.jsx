@@ -1,44 +1,37 @@
 import React, { useState, useEffect } from 'react'
+import ReactDOM from "react-dom";
 //import axios from "axios"
+// server
+//import fetch from 'node-fetch';
+global.fetch = fetch;
+// browser
+//import 'whatwg-fetch';
 import { createApi } from 'unsplash-js';
-import nodeFetch from 'node-fetch';
-import 'whatwg-fetch';
-
-
-const unsplash = createApi({
-  accessKey: 'afNUMbyjegNpBU6fk3cn971f1YxW2wCl2igUQX6kUho',
-  fetch: nodeFetch,
-});
-images = [];
+import Loading from './Loading'
 
 export default function ImageImport(props) {
-  const [image, setImage] = useState(0)
 
+const api = createApi({
+  accessKey: 'afNUMbyjegNpBU6fk3cn971f1YxW2wCl2igUQX6kUho',
+});
 
-  unsplash.image.get({ query: wanderlust })
-  .then(response => response.json)
-    .then(result => setImage(result))
-    .catch(error => console.error(error, 'error'))
-  
-  // const apiCall = async () => {
-  //   const data = await axios('https://api.unsplash.com/search/photos?query=wanderlust')
-  //   console.log(data)
-  //   setImage(data)
-  // }
-  // const apiCall = (event) => {
-  //   fetch('https://api.unsplash.com/search/photos?query=wanderlust')
-  //     .then(response => response.json)
-  //     .then(result => setImage(result))
-}
+  const [data, setImageResponse] = useState(null);
+
   useEffect(() => {
-    apiCall()
+    api.search()
+      .getPhotos({ query: "wanderlust", orientation: "portrait" })
+      .then(result => {
+        setImageResponse(result)
+        console.log(result)
+      })
+    .catch(error => console.error(error, "Error"))
   }, [])
-//i believe i need to put the left and right arrows in the []
-  
-  return (
-    <div>{image}
-    </div>
 
-  )
+  if (data === null) {
+    <Loading />
+  }
+
+
+  
 
 }
