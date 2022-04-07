@@ -2,7 +2,6 @@ import { useEffect, useState } from "react"
 import Loading from './Loading'
 import { ReactComponent as LeftArrow } from "./arrows/arrow-left.svg";
 import { ReactComponent as RightArrow } from "./arrows/arrow-right.svg";
-import {useParams} from 'react-router-dom'
 
 
 let Images = () => {
@@ -73,15 +72,7 @@ let Images = () => {
     <header>
       <h1> draino gallery
           </h1>
-          {/* {images.map((photographerName) => (
-            <h2 
-              key={photographerName}
-              src={images[currentImage].user.name.value}
-              hey
-           /> ))}
-     <br />
-    <h2>by images[currentImage].user.name</h2>
-     */}
+          <h2>images from unsplash</h2>
      
     </header>
     
