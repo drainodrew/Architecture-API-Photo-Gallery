@@ -43,7 +43,49 @@ let Images = () => {
   }
 
   return (
-  
+    
+    <body style={{
+      backgroundColor: currentImage === 0 ? '#C1E8FC'
+        : currentImage === 1 ? '#A57051'
+          : currentImage === 2 ? '#D7CEC1'
+            : currentImage === 4 ? '#305B80'
+              : currentImage === 6 ? '#5B5B5B'
+                : currentImage === 7 ? '#31363C'
+                  : currentImage === 8 ? '#811111'
+                  : currentImage === 9 ? '#395561'
+        : "initial",
+      color: currentImage === 0 ? '#294910'
+        : currentImage === 1 ? '#141718'
+        : currentImage === 2 ? '#487A8A'
+            : currentImage === 3 ? '#CF9868'
+              : currentImage === 3 ? '#CF9868'
+                : currentImage === 4 ? '#CFD7E8'
+                  : currentImage === 5 ? '#4D6232'
+                    : currentImage === 6 ? '#468299'
+                      : currentImage === 7 ? '#959597'
+                        : currentImage === 8 ? '#B5C1BB'
+                        : currentImage === 9 ? '#3F2B24'
+          : "initial"
+          
+    }}>
+    <section>
+      
+    <header>
+      <h1> draino gallery
+          </h1>
+          {/* {images.map((photographerName) => (
+            <h2 
+              key={photographerName}
+              src={images[currentImage].user.name.value}
+              hey
+           /> ))}
+     <br />
+    <h2>by images[currentImage].user.name</h2>
+     */}
+     
+    </header>
+    
+    
     <figure>
       {numLoaded < images.length && (
         <Loading calculatedWidth={(numLoaded / images.length) * 100} />
@@ -62,8 +104,10 @@ let Images = () => {
           className={currentImage === index ? "display" : "hide"}
         />
       ))}
-      <header>{currentImage === 0 ? "background1" : "body" }</header>
-  </figure>
+      
+      </figure>
+      </section>
+      </body>
  )
 }
 
