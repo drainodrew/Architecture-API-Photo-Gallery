@@ -1,12 +1,22 @@
 import logo from './logo.svg';
 import './App.css';
-import ImageImport from './Images/ImagesImport';
+import Images from './Images/Images';
 
-function App() {
+const App = () => {
+  
   return (
-    <ImageImport />
-    
-  )
+    <section>
+      
+      <header>
+      <h1>Architecture</h1>
+      <h2>Title <br />
+      by Artist Name</h2>
+        </header>
+      
+      <Images />
+      
+      </section>
+  );
 }
 
 export default App;

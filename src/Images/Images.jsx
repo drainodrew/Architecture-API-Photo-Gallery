@@ -1,13 +1,28 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import Loading from './Loading'
-import { ReactComponent as LeftArrow } from "./assets/arrow-left.svg";
-import { ReactComponent as RightArrow } from "./assets/arrow-right.svg";
-import ImageImport from "./ImagesImport";
+import { ReactComponent as LeftArrow } from "./arrows/arrow-left.svg";
+import { ReactComponent as RightArrow } from "./arrows/arrow-right.svg";
+import {useParams} from 'react-router-dom'
 
-
-const images = [{}]
 
 let Images = () => {
+  const [images, setImages] = useState([])
+
+
+  const apiCall = () => {
+    fetch(`https://api.unsplash.com/topics/architecture/photos/?client_id=afNUMbyjegNpBU6fk3cn971f1YxW2wCl2igUQX6kUho`)
+      .then(response => response.json())
+      .then(result => setImages(result))
+      .catch(error => console.error(error, "error"))
+  }
+
+  useEffect(() => {
+    apiCall()
+  }, [])
+  
+      console.log(images)
+
+
   const [currentImage, setCurrentImage] = useState(0)
 
   const handleClickNext = () => {
@@ -44,7 +59,7 @@ let Images = () => {
         <img
           alt=""
           key={imageURL}
-          src={imageURL}
+          src={images[currentImage].urls.regular}
           onLoad={handleImageLoad}
           className={currentImage === index ? "display" : "hide"}
         />
