@@ -20,9 +20,6 @@ let Images = () => {
     apiCall()
   }, [])
   
-      console.log(images)
-
-
   const [currentImage, setCurrentImage] = useState(0)
 
   const handleClickNext = () => {
@@ -46,6 +43,7 @@ let Images = () => {
   }
 
   return (
+  
     <figure>
       {numLoaded < images.length && (
         <Loading calculatedWidth={(numLoaded / images.length) * 100} />
@@ -64,7 +62,7 @@ let Images = () => {
           className={currentImage === index ? "display" : "hide"}
         />
       ))}
-      
+      <header>{currentImage === 0 ? "background1" : "body" }</header>
   </figure>
  )
 }

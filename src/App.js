@@ -8,9 +8,10 @@ const App = () => {
     <section>
       
       <header>
-      <h1>Architecture</h1>
+        <h1> 
+      </h1>
       <h2>Title <br />
-      by Artist Name</h2>
+      by images[currentImage].user.name</h2>
         </header>
       
       <Images />
