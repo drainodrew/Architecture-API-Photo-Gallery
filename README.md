@@ -1,4 +1,4 @@
-# Getting Started with Create React App
+# Architecture Image API
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
@@ -69,3 +69,7 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
 # Wanderlust-Photo-Gallery
+
+The gallery contains 10 images from unspash.com's api. It fed me 10 random images under the category "architecture." 
+
+Because of Unspash's restrictions, the app has a limit on how many fetches it can make (50). If more than 50 fetches are called, you will have to wait an hour before it will make another GET request. 
